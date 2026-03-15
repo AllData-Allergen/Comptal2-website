@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comptal2 — Logiciel de comptabilité moderne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Comptal2</a>
+    <div class="nav__links">
+      <a href="index.html" class="nav__link--active" data-i18n="nav.home">Accueil</a>
+      <a href="download.html" data-i18n="nav.download">Télécharger</a>
+      <select id="lang-switcher" class="lang-switcher" aria-label="Language">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+    </div>
+    <div class="hero__content reveal">
+      <span class="hero__badge" data-i18n="hero.badge">Open Source & Gratuit</span>
+      <h1 class="hero__title" data-i18n="hero.title">Comptal2</h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">Logiciel de comptabilité moderne — Windows, macOS, Linux</p>
+      <div class="hero__actions">
+        <a href="download.html" class="hero__cta" data-i18n="hero.cta">Télécharger Comptal2</a>
+        <a href="#features" class="hero__cta-secondary" data-i18n="hero.discover">Découvrir</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ Fonctionnalités principales ============ -->
+    <section class="features" id="features">
+      <h2 class="section-title reveal" data-i18n="features.title">Fonctionnement</h2>
+      <p class="section-intro reveal" data-i18n="features.intro">Comptal2 centralise vos transactions bancaires et vous offre des vues claires pour piloter vos finances.</p>
+
+      <div class="features__grid">
+        <article class="feature-card reveal">
+          <span class="feature-card__icon">📥</span>
+          <h3 class="feature-card__title" data-i18n="features.import.title">Import de données</h3>
+          <p class="feature-card__desc" data-i18n="features.import.desc">Importez vos fichiers CSV ou Excel. Détection automatique des colonnes et mapping personnalisable (date, libellé, montant, compte, catégorie).</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-card__icon">📊</span>
+          <h3 class="feature-card__title" data-i18n="features.dashboard.title">Tableau de bord</h3>
+          <p class="feature-card__desc" data-i18n="features.dashboard.desc">Statistiques en temps réel, soldes par compte, graphiques interactifs (camemberts, barres) pour une vue d'ensemble immédiate.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-card__icon">💰</span>
+          <h3 class="feature-card__title" data-i18n="features.finance.title">Finance global</h3>
+          <p class="feature-card__desc" data-i18n="features.finance.desc">Revenus vs dépenses, analyses mensuelles, tendances et graphiques détaillés pour une analyse complète de vos finances.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-card__icon">🏷️</span>
+          <h3 class="feature-card__title" data-i18n="features.categorization.title">Catégorisation automatique</h3>
+          <p class="feature-card__desc" data-i18n="features.categorization.desc">Règles configurables et apprentissage des patterns récurrents pour classer vos transactions automatiquement.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-card__icon">🏦</span>
+          <h3 class="feature-card__title" data-i18n="features.multiAccount.title">Multi-comptes</h3>
+          <p class="feature-card__desc" data-i18n="features.multiAccount.desc">Gérez plusieurs comptes bancaires avec soldes individuels et vue consolidée globale.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-card__icon">📤</span>
+          <h3 class="feature-card__title" data-i18n="features.export.title">Export de données</h3>
+          <p class="feature-card__desc" data-i18n="features.export.desc">Exportez vos transactions filtrées au format CSV. Générez des rapports PDF personnalisés pour vos bilans.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ Dashboard ============ -->
+    <section class="detail-section detail-section--alt" id="dashboard">
+      <div class="detail__container reveal">
+        <div class="detail__text">
+          <span class="detail__badge" data-i18n="detail.dashboard.badge">Tableau de bord</span>
+          <h2 class="detail__title" data-i18n="detail.dashboard.title">Vue d'ensemble en temps réel</h2>
+          <p class="detail__desc" data-i18n="detail.dashboard.desc">Le tableau de bord centralise vos indicateurs financiers clés avec des graphiques interactifs.</p>
+          <div class="detail__features">
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.dashboard.f1.title">Cartes de statistiques</strong>
+              <span data-i18n="detail.dashboard.f1.desc">Solde total, dépenses, revenus calculés en temps réel selon la période et les filtres.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.dashboard.f2.title">Graphiques interactifs</strong>
+              <span data-i18n="detail.dashboard.f2.desc">Camemberts dépenses/revenus par catégorie et courbe d'évolution des soldes par compte.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.dashboard.f3.title">Moyennes par catégorie</strong>
+              <span data-i18n="detail.dashboard.f3.desc">Mini-cartes affichant les moyennes mensuelles par catégorie, triées par importance.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.dashboard.f4.title">Filtres avancés</strong>
+              <span data-i18n="detail.dashboard.f4.desc">Filtrage par compte, catégorie, période (slider), recherche textuelle et export CSV.</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail__visual">
+          <div class="chart-mock chart-mock--pie">
+            <svg viewBox="0 0 120 120" class="chart-mock__svg">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#dbeafe" stroke-width="20"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#3b82f6" stroke-width="20" stroke-dasharray="110 204" stroke-dashoffset="-10" class="chart-ring chart-ring--1"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#1e3a8a" stroke-width="20" stroke-dasharray="70 244" stroke-dashoffset="-120" class="chart-ring chart-ring--2"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#60a5fa" stroke-width="20" stroke-dasharray="34 280" stroke-dashoffset="-190" class="chart-ring chart-ring--3"/>
+            </svg>
+            <div class="chart-mock__legend">
+              <span class="chart-dot" style="background:#3b82f6"></span><span data-i18n="chart.expenses">Dépenses</span>
+              <span class="chart-dot" style="background:#1e3a8a"></span><span data-i18n="chart.income">Revenus</span>
+              <span class="chart-dot" style="background:#60a5fa"></span><span data-i18n="chart.balance">Solde</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Finance Global ============ -->
+    <section class="detail-section" id="finance">
+      <div class="detail__container detail__container--reverse reveal">
+        <div class="detail__text">
+          <span class="detail__badge detail__badge--indigo" data-i18n="detail.finance.badge">Finance Global</span>
+          <h2 class="detail__title" data-i18n="detail.finance.title">Analysez vos flux financiers</h2>
+          <p class="detail__desc" data-i18n="detail.finance.desc">Des graphiques puissants pour comprendre vos revenus, dépenses et tendances sur toutes les périodes.</p>
+          <div class="detail__features">
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.finance.f1.title">Graphique mensuel</strong>
+              <span data-i18n="detail.finance.f1.desc">Barres empilées par catégorie : visualisez la répartition des flux mois par mois.</span>
+            </div>
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.finance.f2.title">Évolution des soldes</strong>
+              <span data-i18n="detail.finance.f2.desc">Barres empilées par compte pour suivre l'évolution de vos soldes dans le temps.</span>
+            </div>
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.finance.f3.title">Projection vs réalité</strong>
+              <span data-i18n="detail.finance.f3.desc">Comparez vos projections avec les données réelles par catégorie et par période.</span>
+            </div>
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.finance.f4.title">Bilan détaillé</strong>
+              <span data-i18n="detail.finance.f4.desc">Répartition crédits/débits par catégorie, tableau récapitulatif et zoom jour à année.</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail__visual detail__visual--finance">
+
+          <!-- 1. Graphique mensuel (principal) — tout en SVG -->
+          <div class="finchart finchart--main">
+            <div class="finchart__header">
+              <span class="finchart__title" data-i18n="detail.finance.chartMonthly">Graphique mensuel</span>
+              <span class="finchart__sub" data-i18n="detail.finance.chartMonthlySub">Dépenses par catégorie</span>
+            </div>
+            <svg class="finchart__svg" viewBox="0 0 360 160" preserveAspectRatio="xMidYMid meet">
+              <!-- Grid -->
+              <line x1="40" y1="20" x2="350" y2="20" stroke="#e2e8f0" stroke-width=".5"/>
+              <line x1="40" y1="55" x2="350" y2="55" stroke="#e2e8f0" stroke-width=".5"/>
+              <line x1="40" y1="90" x2="350" y2="90" stroke="#cbd5e1" stroke-width="1"/>
+              <line x1="40" y1="125" x2="350" y2="125" stroke="#e2e8f0" stroke-width=".5"/>
+              <!-- Y labels -->
+              <text x="36" y="24" text-anchor="end" class="finchart__axislabel">10k</text>
+              <text x="36" y="59" text-anchor="end" class="finchart__axislabel">5k</text>
+              <text x="36" y="94" text-anchor="end" class="finchart__axislabel">0</text>
+              <text x="36" y="129" text-anchor="end" class="finchart__axislabel">-5k</text>
+              <!-- Jan : Salaire + / Impôt, Alim, Logement - -->
+              <rect class="finchart__bar" x="52" y="42" width="26" height="48" rx="2" fill="#10b981"/>
+              <rect class="finchart__bar" x="52" y="90" width="26" height="14" rx="2" fill="#f59e0b"/>
+              <rect class="finchart__bar" x="52" y="104" width="26" height="10" rx="2" fill="#60a5fa"/>
+              <rect class="finchart__bar" x="52" y="114" width="26" height="8" rx="2" fill="#1e3a8a"/>
+              <!-- Fév -->
+              <rect class="finchart__bar" x="102" y="36" width="26" height="54" rx="2" fill="#10b981"/>
+              <rect class="finchart__bar" x="102" y="90" width="26" height="12" rx="2" fill="#f59e0b"/>
+              <rect class="finchart__bar" x="102" y="102" width="26" height="11" rx="2" fill="#60a5fa"/>
+              <rect class="finchart__bar" x="102" y="113" width="26" height="7" rx="2" fill="#64748b"/>
+              <!-- Mar -->
+              <rect class="finchart__bar" x="152" y="30" width="26" height="60" rx="2" fill="#10b981"/>
+              <rect class="finchart__bar" x="152" y="90" width="26" height="11" rx="2" fill="#60a5fa"/>
+              <rect class="finchart__bar" x="152" y="101" width="26" height="9" rx="2" fill="#1e3a8a"/>
+              <rect class="finchart__bar" x="152" y="110" width="26" height="5" rx="2" fill="#94a3b8"/>
+              <!-- Avr -->
+              <rect class="finchart__bar" x="202" y="38" width="26" height="52" rx="2" fill="#10b981"/>
+              <rect class="finchart__bar" x="202" y="90" width="26" height="16" rx="2" fill="#f59e0b"/>
+              <rect class="finchart__bar" x="202" y="106" width="26" height="10" rx="2" fill="#60a5fa"/>
+              <rect class="finchart__bar" x="202" y="116" width="26" height="6" rx="2" fill="#3b82f6"/>
+              <!-- Mai -->
+              <rect class="finchart__bar" x="252" y="33" width="26" height="57" rx="2" fill="#10b981"/>
+              <rect class="finchart__bar" x="252" y="90" width="26" height="13" rx="2" fill="#60a5fa"/>
+              <rect class="finchart__bar" x="252" y="103" width="26" height="8" rx="2" fill="#64748b"/>
+              <!-- Juin -->
+              <rect class="finchart__bar" x="302" y="28" width="26" height="62" rx="2" fill="#10b981"/>
+              <rect class="finchart__bar" x="302" y="90" width="26" height="10" rx="2" fill="#60a5fa"/>
+              <rect class="finchart__bar" x="302" y="100" width="26" height="8" rx="2" fill="#1e3a8a"/>
+              <!-- Total line -->
+              <polyline class="finchart__total-line" points="65,64 115,58 165,50 215,62 265,54 315,48"/>
+              <circle class="finchart__dot" cx="65" cy="64" r="4" fill="#10b981" stroke="#fff" stroke-width="2"/>
+              <circle class="finchart__dot" cx="115" cy="58" r="4" fill="#10b981" stroke="#fff" stroke-width="2"/>
+              <circle class="finchart__dot" cx="165" cy="50" r="4" fill="#10b981" stroke="#fff" stroke-width="2"/>
+              <circle class="finchart__dot" cx="215" cy="62" r="4" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+              <circle class="finchart__dot" cx="265" cy="54" r="4" fill="#10b981" stroke="#fff" stroke-width="2"/>
+              <circle class="finchart__dot" cx="315" cy="48" r="4" fill="#10b981" stroke="#fff" stroke-width="2"/>
+              <!-- Tooltip mock -->
+              <rect x="148" y="36" width="60" height="15" rx="4" fill="#1e293b" opacity=".85"/>
+              <text x="178" y="47" text-anchor="middle" fill="#fff" font-size="7" font-weight="600">6 251,46 €</text>
+              <!-- X labels -->
+              <text x="65"  y="148" text-anchor="middle" class="finchart__axislabel" data-i18n="chart.jan">Jan</text>
+              <text x="115" y="148" text-anchor="middle" class="finchart__axislabel" data-i18n="chart.feb">Fév</text>
+              <text x="165" y="148" text-anchor="middle" class="finchart__axislabel" data-i18n="chart.mar">Mar</text>
+              <text x="215" y="148" text-anchor="middle" class="finchart__axislabel" data-i18n="chart.apr">Avr</text>
+              <text x="265" y="148" text-anchor="middle" class="finchart__axislabel" data-i18n="chart.may">Mai</text>
+              <text x="315" y="148" text-anchor="middle" class="finchart__axislabel" data-i18n="chart.jun">Juin</text>
+            </svg>
+            <div class="finchart__legend">
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#10b981"></span>Salaire</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#f59e0b"></span>Impôt</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#60a5fa"></span>Alimentation</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#1e3a8a"></span>Logement</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#64748b"></span>Transport</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#3b82f6"></span>Gaz/Élec</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch" style="background:#94a3b8"></span>Divers</div>
+              <div class="finchart__legend-item"><span class="finchart__swatch finchart__swatch--line"></span>Total</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Édition ============ -->
+    <section class="detail-section detail-section--alt" id="edition">
+      <div class="detail__container reveal">
+        <div class="detail__text">
+          <span class="detail__badge detail__badge--amber" data-i18n="detail.edition.badge">Édition</span>
+          <h2 class="detail__title" data-i18n="detail.edition.title">Éditez vos transactions</h2>
+          <p class="detail__desc" data-i18n="detail.edition.desc">Un éditeur complet pour modifier, catégoriser et nettoyer vos données financières.</p>
+          <div class="detail__features">
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.edition.f1.title">Tableau éditable</strong>
+              <span data-i18n="detail.edition.f1.desc">Édition inline (date, libellé, débit, crédit, solde, catégorie) avec autocomplétion.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.edition.f2.title">Auto-catégorisation</strong>
+              <span data-i18n="detail.edition.f2.desc">Suggestions basées sur les libellés déjà catégorisés, validation avant application.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.edition.f3.title">Nettoyage des données</strong>
+              <span data-i18n="detail.edition.f3.desc">Suppression de doublons, correction des incohérences, insertion/suppression de lignes.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.edition.f4.title">Filtres par source</strong>
+              <span data-i18n="detail.edition.f4.desc">Filtrage par fichier source, par catégorie et par période avec sauvegarde CSV.</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail__visual">
+          <div class="chart-mock chart-mock--table">
+            <div class="mock-table">
+              <div class="mock-table__row mock-table__row--header">
+                <span>Date</span><span>Libellé</span><span>Montant</span><span>Cat.</span>
+              </div>
+              <div class="mock-table__row"><span>15/01</span><span>Loyer bureau</span><span class="mock-amount--red">-1 200 €</span><span class="mock-cat">Charges</span></div>
+              <div class="mock-table__row"><span>18/01</span><span>Client ABC</span><span class="mock-amount--green">+3 500 €</span><span class="mock-cat">Vente</span></div>
+              <div class="mock-table__row"><span>22/01</span><span>Fournitures</span><span class="mock-amount--red">-89 €</span><span class="mock-cat mock-cat--auto">Auto</span></div>
+              <div class="mock-table__row"><span>25/01</span><span>Abonnement</span><span class="mock-amount--red">-49 €</span><span class="mock-cat">Abo</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Projet ============ -->
+    <section class="detail-section" id="projet">
+      <div class="detail__container detail__container--reverse reveal">
+        <div class="detail__text">
+          <span class="detail__badge detail__badge--violet" data-i18n="detail.projet.badge">Projet</span>
+          <h2 class="detail__title" data-i18n="detail.projet.title">Planifiez et suivez vos projets</h2>
+          <p class="detail__desc" data-i18n="detail.projet.desc">Créez des projections financières et comparez-les à la réalité pour chaque projet.</p>
+          <div class="detail__features">
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.projet.f1.title">Multi-projets</strong>
+              <span data-i18n="detail.projet.f1.desc">Créez, sélectionnez et gérez plusieurs projets indépendants avec leurs paramètres.</span>
+            </div>
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.projet.f2.title">Abonnements récurrents</strong>
+              <span data-i18n="detail.projet.f2.desc">Débits et crédits récurrents (journalier à annuel) avec taux variables configurables.</span>
+            </div>
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.projet.f3.title">Projection financière</strong>
+              <span data-i18n="detail.projet.f3.desc">Évolution du solde, solde mensuel, débits vs crédits, impact cumulé par ligne.</span>
+            </div>
+            <div class="detail__feat reveal-right">
+              <strong data-i18n="detail.projet.f4.title">Configuration avancée</strong>
+              <span data-i18n="detail.projet.f4.desc">Solde initial, plafonds de compte, priorités et création depuis catégorie ou transaction.</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail__visual">
+          <div class="chart-mock chart-mock--line">
+            <svg viewBox="0 0 200 100" class="line-chart__svg" preserveAspectRatio="none">
+              <polyline class="line-chart__line line-chart__line--projected" points="10,80 40,70 70,55 100,45 130,35 160,20 190,10"/>
+              <polyline class="line-chart__line line-chart__line--real" points="10,80 40,72 70,60 100,55 130,50 160,42"/>
+            </svg>
+            <div class="chart-mock__legend">
+              <span class="chart-dot" style="background:#8b5cf6"></span><span>Projection</span>
+              <span class="chart-dot" style="background:#3b82f6"></span><span>Réel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Importation ============ -->
+    <section class="detail-section detail-section--alt" id="import">
+      <div class="detail__container reveal">
+        <div class="detail__text">
+          <span class="detail__badge detail__badge--emerald" data-i18n="detail.import.badge">Importation</span>
+          <h2 class="detail__title" data-i18n="detail.import.title">Importez vos données facilement</h2>
+          <p class="detail__desc" data-i18n="detail.import.desc">Un assistant d'import intelligent pour CSV et Excel avec détection automatique.</p>
+          <div class="detail__features">
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.import.f1.title">Import CSV</strong>
+              <span data-i18n="detail.import.f1.desc">Glisser-déposer ou sélection de fichier, détection automatique de la structure des colonnes.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.import.f2.title">Import Excel</strong>
+              <span data-i18n="detail.import.f2.desc">Support .xlsx/.xls, sélection de feuilles, association d'une feuille à un compte.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.import.f3.title">Mapping des colonnes</strong>
+              <span data-i18n="detail.import.f3.desc">Assignation visuelle des colonnes (date, libellé, débit, crédit, solde) avec aperçu.</span>
+            </div>
+            <div class="detail__feat reveal-left">
+              <strong data-i18n="detail.import.f4.title">Saisie manuelle</strong>
+              <span data-i18n="detail.import.f4.desc">Création manuelle de transactions avec choix du compte et prévisualisation avant import.</span>
+            </div>
+          </div>
+        </div>
+        <div class="detail__visual">
+          <div class="chart-mock chart-mock--import">
+            <div class="import-mock">
+              <div class="import-mock__dropzone">
+                <span class="import-mock__icon">📄</span>
+                <span class="import-mock__text">releve_banque.csv</span>
+              </div>
+              <div class="import-mock__mapping">
+                <div class="import-mock__col"><span class="import-mock__col-from">Colonne A</span><span class="import-mock__col-arrow">→</span><span class="import-mock__col-to">Date</span></div>
+                <div class="import-mock__col"><span class="import-mock__col-from">Colonne B</span><span class="import-mock__col-arrow">→</span><span class="import-mock__col-to">Libellé</span></div>
+                <div class="import-mock__col"><span class="import-mock__col-from">Colonne C</span><span class="import-mock__col-arrow">→</span><span class="import-mock__col-to">Montant</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Entreprise ============ -->
+    <section class="showcase showcase--entreprise" id="entreprise">
+      <div class="showcase__container reveal">
+        <div class="showcase__text">
+          <span class="showcase__badge" data-i18n="entreprise.badge">Entreprise</span>
+          <h2 class="showcase__title" data-i18n="entreprise.title">Pilotez votre activité professionnelle</h2>
+          <p class="showcase__desc" data-i18n="entreprise.desc">Un espace dédié à la gestion complète de votre entreprise, de la facturation au suivi fiscal.</p>
+          <ul class="showcase__list">
+            <li class="showcase__item reveal-left">
+              <span class="showcase__item-icon">📄</span>
+              <div><strong data-i18n="entreprise.invoices.title">Devis et factures</strong><span data-i18n="entreprise.invoices.desc">Créez des devis, convertissez-les en factures, suivez les paiements et générez des PDF conformes.</span></div>
+            </li>
+            <li class="showcase__item reveal-left">
+              <span class="showcase__item-icon">👥</span>
+              <div><strong data-i18n="entreprise.clients.title">Gestion clients</strong><span data-i18n="entreprise.clients.desc">Répertoire de clients (particuliers/entreprises), recherche SIRENE, historique des transactions.</span></div>
+            </li>
+            <li class="showcase__item reveal-left">
+              <span class="showcase__item-icon">📦</span>
+              <div><strong data-i18n="entreprise.stock.title">Stock et achats</strong><span data-i18n="entreprise.stock.desc">Inventaire, amortissements, registre d'achats, suivi de la valeur patrimoniale de l'entreprise.</span></div>
+            </li>
+            <li class="showcase__item reveal-left">
+              <span class="showcase__item-icon">📒</span>
+              <div><strong data-i18n="entreprise.registre.title">Registres fiscaux</strong><span data-i18n="entreprise.registre.desc">Livre des recettes, registre des achats, rapports TVA (CA3/CA12) et rapport d'activité annuel en PDF.</span></div>
+            </li>
+            <li class="showcase__item reveal-left">
+              <span class="showcase__item-icon">📈</span>
+              <div><strong data-i18n="entreprise.stats.title">Tableaux de bord</strong><span data-i18n="entreprise.stats.desc">CA total, taux de recouvrement, répartition des bénéfices par poste, évolution de l'inventaire.</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="showcase__visual">
+          <div class="showcase__card-stack">
+            <div class="showcase__mini-card showcase__mini-card--1">
+              <span class="showcase__mini-label" data-i18n="entreprise.card1.label">Facture #2024-042</span>
+              <span class="showcase__mini-amount showcase__mini-amount--green" data-i18n="entreprise.card1.amount">+ 2 450,00 €</span>
+            </div>
+            <div class="showcase__mini-card showcase__mini-card--2">
+              <span class="showcase__mini-label" data-i18n="entreprise.card2.label">Devis #D-2024-018</span>
+              <span class="showcase__mini-amount" data-i18n="entreprise.card2.amount">3 200,00 € HT</span>
+            </div>
+            <div class="showcase__mini-card showcase__mini-card--3">
+              <span class="showcase__mini-label" data-i18n="entreprise.card3.label">TVA collectée</span>
+              <span class="showcase__mini-amount showcase__mini-amount--blue" data-i18n="entreprise.card3.amount">1 840,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Association ============ -->
+    <section class="showcase showcase--association" id="association">
+      <div class="showcase__container showcase__container--reverse reveal">
+        <div class="showcase__text">
+          <span class="showcase__badge showcase__badge--teal" data-i18n="association.badge">Association</span>
+          <h2 class="showcase__title" data-i18n="association.title">Gérez votre association en toute conformité</h2>
+          <p class="showcase__desc" data-i18n="association.desc">Suivi des donateurs, reçus fiscaux CERFA et analyse des dons — tout ce qu'il faut pour votre comptabilité associative.</p>
+          <ul class="showcase__list">
+            <li class="showcase__item reveal-right">
+              <span class="showcase__item-icon">🤝</span>
+              <div><strong data-i18n="association.donors.title">Gestion des donateurs</strong><span data-i18n="association.donors.desc">Particuliers et entreprises, dons en numéraire, en nature et mécénat de compétences. Liaison directe aux transactions bancaires.</span></div>
+            </li>
+            <li class="showcase__item reveal-right">
+              <span class="showcase__item-icon">🧾</span>
+              <div><strong data-i18n="association.cerfa.title">Reçus fiscaux CERFA</strong><span data-i18n="association.cerfa.desc">Génération conforme aux articles 200 et 238 bis du CGI. Aperçu PDF, génération individuelle ou en lot.</span></div>
+            </li>
+            <li class="showcase__item reveal-right">
+              <span class="showcase__item-icon">📋</span>
+              <div><strong data-i18n="association.registre.title">Registre des reçus</strong><span data-i18n="association.registre.desc">Historique complet, filtres (actifs/annulés), traçabilité garantie avec conservation des reçus annulés.</span></div>
+            </li>
+            <li class="showcase__item reveal-right">
+              <span class="showcase__item-icon">💡</span>
+              <div><strong data-i18n="association.charges.title">Charges et projections</strong><span data-i18n="association.charges.desc">Projection des charges récurrentes, suivi par catégorie, export PDF pour vos bilans associatifs.</span></div>
+            </li>
+            <li class="showcase__item reveal-right">
+              <span class="showcase__item-icon">📊</span>
+              <div><strong data-i18n="association.charts.title">Synthèse et graphiques</strong><span data-i18n="association.charts.desc">Total des dons, nombre de donateurs actifs, don moyen, répartition par catégorie et top donateurs.</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="showcase__visual">
+          <div class="showcase__card-stack">
+            <div class="showcase__mini-card showcase__mini-card--1 showcase__mini-card--teal">
+              <span class="showcase__mini-label" data-i18n="association.card1.label">Reçu fiscal #RF-2024-087</span>
+              <span class="showcase__mini-amount showcase__mini-amount--teal" data-i18n="association.card1.amount">Don : 500,00 €</span>
+            </div>
+            <div class="showcase__mini-card showcase__mini-card--2 showcase__mini-card--teal">
+              <span class="showcase__mini-label" data-i18n="association.card2.label">Donateurs actifs</span>
+              <span class="showcase__mini-amount showcase__mini-amount--teal" data-i18n="association.card2.amount">42 donateurs</span>
+            </div>
+            <div class="showcase__mini-card showcase__mini-card--3 showcase__mini-card--teal">
+              <span class="showcase__mini-label" data-i18n="association.card3.label">Total des dons 2024</span>
+              <span class="showcase__mini-amount showcase__mini-amount--teal" data-i18n="association.card3.amount">18 640,00 €</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Schéma ============ -->
+    <section class="diagram" id="schema">
+      <h2 class="section-title reveal" data-i18n="diagram.title">Schéma du logiciel</h2>
+      <p class="section-intro reveal" data-i18n="diagram.intro">Vue d'ensemble du flux de données et des modules de Comptal2.</p>
+      <div class="diagram__container reveal">
+        <div class="diagram__flow">
+          <div class="diagram__node diagram__node--entry">
+            <span class="diagram__label" data-i18n="diagram.import">Import</span>
+            <span class="diagram__sublabel" data-i18n="diagram.importSub">CSV / Excel</span>
+          </div>
+          <div class="diagram__arrow">→</div>
+          <div class="diagram__node">
+            <span class="diagram__label" data-i18n="diagram.transactions">Transactions</span>
+            <span class="diagram__sublabel" data-i18n="diagram.transactionsSub">Base de données</span>
+          </div>
+          <div class="diagram__arrow">→</div>
+          <div class="diagram__branch">
+            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.dashboard">Tableau de bord</span></div>
+            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.finance">Finance global</span></div>
+            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.edition">Édition</span></div>
+            <div class="diagram__node diagram__node--module diagram__node--entreprise"><span class="diagram__label" data-i18n="diagram.entreprise">Entreprise</span></div>
+            <div class="diagram__node diagram__node--module diagram__node--association"><span class="diagram__label" data-i18n="diagram.association">Association</span></div>
+            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.projet">Projet</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="diagram__legend reveal">
+        <div class="diagram__legend-item"><span class="diagram__legend-dot diagram__legend-dot--entry"></span><span data-i18n="diagram.legendEntry">Entrée des données</span></div>
+        <div class="diagram__legend-item"><span class="diagram__legend-dot diagram__legend-dot--core"></span><span data-i18n="diagram.legendCore">Données centralisées</span></div>
+        <div class="diagram__legend-item"><span class="diagram__legend-dot diagram__legend-dot--module"></span><span data-i18n="diagram.legendModule">Vues et modules</span></div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="cta-section">
+      <div class="cta-section__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+      </div>
+      <div class="cta-section__content">
+        <h2 class="cta-section__title reveal" data-i18n="cta.title">Prêt à gérer vos finances ?</h2>
+        <p class="cta-section__desc reveal" data-i18n="cta.desc">Gratuit, open source et disponible sur toutes les plateformes.</p>
+        <a href="download.html" class="cta-section__btn reveal" data-i18n="cta.btn">Télécharger Comptal2</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <a href="https://github.com/LeopaulV/Comptal2" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Code source</a>
+    <span class="footer__sep">·</span>
+    <a href="https://github.com/LeopaulV/Comptal2/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">Releases</a>
+    <span class="footer__sep">·</span>
+    <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.issues">Signaler un problème</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
