@@ -807,6 +807,131 @@ body {
   flex: 1;
 }
 
+/* ========== Page Qui je suis ========== */
+.about-page {
+  flex: 1;
+}
+
+.about-content {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.about-section {
+  margin-bottom: 2.5rem;
+}
+
+.about-section__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--invoicing-gray-900);
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.about-section__text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--invoicing-gray-700);
+  margin: 0 0 1rem;
+}
+
+.about-section__text:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-section__text strong {
+  color: var(--invoicing-gray-900);
+  font-weight: 600;
+}
+
+.about-section--alt .about-section__title {
+  color: var(--invoicing-primary);
+}
+
+.about-section__link-wrap {
+  margin-top: 1rem;
+}
+
+.about-section__link {
+  color: var(--invoicing-primary);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.about-section__link:hover {
+  text-decoration: underline;
+}
+
+/* Fiche synthétique profil */
+.about-profile {
+  margin-top: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.about-profile__card {
+  background: white;
+  border: 1px solid var(--invoicing-gray-200);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.about-profile__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.about-profile__icon {
+  font-size: 1.3rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.about-profile__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.about-profile__info strong {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--invoicing-gray-900);
+}
+
+.about-profile__info span {
+  font-size: 0.875rem;
+  color: var(--invoicing-gray-500);
+}
+
+.about-profile__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+  padding: 0.65rem 1.25rem;
+  align-self: flex-start;
+  background: #0a66c2;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.about-profile__linkedin:hover {
+  background: #0958a8;
+  transform: translateY(-2px);
+}
+
 /* ---------- Hero ---------- */
 .dl-hero {
   position: relative;

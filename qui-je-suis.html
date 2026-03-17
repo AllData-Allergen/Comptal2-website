@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qui je suis — Léopaul Vogt, créateur de Comptal2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Comptal2</a>
+    <div class="nav__links">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="download.html" data-i18n="nav.download">Télécharger</a>
+      <a href="qui-je-suis.html" class="nav__link--active" data-i18n="nav.about">Qui je suis</a>
+      <select id="lang-switcher" class="lang-switcher" aria-label="Language">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="de">DE</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="about-page">
+
+    <section class="dl-hero">
+      <div class="dl-hero__bg" aria-hidden="true">
+        <div class="dl-hero__orb dl-hero__orb--1"></div>
+        <div class="dl-hero__orb dl-hero__orb--2"></div>
+        <div class="dl-hero__orb dl-hero__orb--3"></div>
+      </div>
+      <div class="dl-hero__content">
+        <span class="dl-hero__badge" data-i18n="about.badge">Créateur de Comptal2</span>
+        <h1 class="dl-hero__title" data-i18n="about.heroTitle">Qui je suis</h1>
+        <p class="dl-hero__subtitle" data-i18n="about.heroSubtitle">Léopaul Vogt — Spécialiste en biotechnologie & créateur de Comptal2</p>
+      </div>
+    </section>
+
+    <div class="about-content">
+
+      <section class="about-section reveal">
+        <h2 class="about-section__title" data-i18n="about.presentation.title">Présentation</h2>
+        <p class="about-section__text" data-i18n="about.presentation.p1">Je suis <strong>Léopaul Vogt</strong>, spécialiste analytique en biologie cellulaire chez <strong>Solvias</strong>. Au quotidien, mon travail tourne autour de la précision : validation de données, rigueur documentaire et conformité réglementaire. C'est cette même exigence que j'ai voulu transposer à la gestion financière — et c'est ainsi qu'est né <strong>Comptal2</strong>.</p>
+      </section>
+
+      <section class="about-section about-section--alt reveal">
+        <h2 class="about-section__title" data-i18n="about.origin.title">L'origine de Comptal2</h2>
+        <p class="about-section__text" data-i18n="about.origin.p1">Le projet Comptal est né d'un simple <strong>tableau Excel</strong> que j'utilisais pour suivre mes finances personnelles. Au fil du temps, ce fichier est devenu trop restreint pour ce que je voulais faire : gérer plusieurs comptes, catégoriser automatiquement, analyser par projets et par périodes. Habitué dans mon travail à chercher les bons outils pour les bons besoins, il m'a semblé naturel de construire quelque chose de plus adapté.</p>
+      </section>
+
+      <section class="about-section reveal">
+        <h2 class="about-section__title" data-i18n="about.development.title">Développé avec Cursor IA</h2>
+        <p class="about-section__text" data-i18n="about.development.p1">Avec l'aide de <strong>Cursor IA</strong>, j'ai pu concrétiser ce projet et en faire un logiciel de comptabilité <strong>gratuit pour tous</strong> et <strong>open source</strong>. Le code est disponible sur GitHub — vous pouvez le consulter, l'adapter ou contribuer.</p>
+        <p class="about-section__link-wrap">
+          <a href="https://github.com/LeopaulV/Comptal2" target="_blank" rel="noopener noreferrer" class="about-section__link">github.com/LeopaulV/Comptal2</a>
+        </p>
+      </section>
+
+      <section class="about-section about-section--alt reveal">
+        <h2 class="about-section__title" data-i18n="about.association.title">Engagement associatif</h2>
+        <p class="about-section__text" data-i18n="about.association.p1">En dehors du laboratoire, je suis membre de l'<strong>association culturelle Amibost</strong> et de la <strong>Chapelle évangélique</strong>. Confronté aux besoins concrets de gestion associative — suivi des dons, reçus fiscaux, bilans — j'ai développé dans Comptal2 un <strong>module dédié aux associations</strong> pour répondre à ces besoins simplement.</p>
+      </section>
+
+      <section class="about-section reveal">
+        <h2 class="about-section__title" data-i18n="about.entreprise.title">Module entreprise</h2>
+        <p class="about-section__text" data-i18n="about.entreprise.p1">Dans mon quotidien professionnel — suivi de processus, gestion d'inventaires, optimisation de flux — j'ai longtemps accumulé des <strong>fichiers Excel</strong> pour structurer mes données. Convaincu qu'il manquait des outils centralisés et accessibles pour les petites structures, j'ai conçu la <strong>partie entreprise</strong> de Comptal2 : devis, factures, clients, stock et registres fiscaux, pour faciliter la gestion des petites PME.</p>
+      </section>
+
+      <!-- Fiche synthétique -->
+      <section class="about-profile reveal">
+        <div class="about-profile__card">
+          <div class="about-profile__item">
+            <span class="about-profile__icon">🔬</span>
+            <div class="about-profile__info">
+              <strong data-i18n="about.profile.job">Spécialiste analytique en biologie cellulaire</strong>
+              <span data-i18n="about.profile.company">Solvias · Immunologie & validation GMP/BPF</span>
+            </div>
+          </div>
+          <div class="about-profile__item">
+            <span class="about-profile__icon">🎓</span>
+            <div class="about-profile__info">
+              <strong data-i18n="about.profile.edu">Master en ingénierie moléculaire</strong>
+              <span data-i18n="about.profile.edu2">Licence en sciences de la santé</span>
+            </div>
+          </div>
+          <div class="about-profile__item">
+            <span class="about-profile__icon">🌍</span>
+            <div class="about-profile__info">
+              <strong data-i18n="about.profile.lang">Langues</strong>
+              <span data-i18n="about.profile.langValue">Français · Anglais · Allemand</span>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/l%C3%A9opaul-vogt/" target="_blank" rel="noopener noreferrer" class="about-profile__linkedin">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            <span data-i18n="about.career.linkedin">Voir mon profil LinkedIn</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <a href="https://github.com/LeopaulV/Comptal2" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Code source</a>
+    <span class="footer__sep">·</span>
+    <a href="https://github.com/LeopaulV/Comptal2/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">Releases</a>
+    <span class="footer__sep">·</span>
+    <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.issues">Signaler un problème</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
