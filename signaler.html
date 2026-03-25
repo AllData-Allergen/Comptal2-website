@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signaler un problème — Comptal2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Issue form page ── */
+    .issue-page {
+      min-height: 100vh;
+    }
+
+    .issue-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .issue-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .issue-intro__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary, #0f172a);
+      margin-bottom: 0.5rem;
+    }
+
+    .issue-intro__desc {
+      color: var(--text-secondary, #64748b);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .issue-form-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,.06);
+    }
+
+    .issue-form__group {
+      margin-bottom: 1.5rem;
+    }
+
+    .issue-form__label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .issue-form__label span {
+      color: #ef4444;
+      margin-left: 2px;
+    }
+
+    .issue-form__sublabel {
+      display: block;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    .issue-form__input,
+    .issue-form__select,
+    .issue-form__textarea {
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      color: #1e293b;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.625rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .issue-form__input:focus,
+    .issue-form__select:focus,
+    .issue-form__textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59,130,246,.12);
+      background: #fff;
+    }
+
+    .issue-form__textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .issue-form__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 560px) {
+      .issue-form__row {
+        grid-template-columns: 1fr;
+      }
+      .issue-form-card {
+        padding: 1.5rem 1.25rem;
+      }
+    }
+
+    .issue-form__type-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+      .issue-form__type-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .issue-type-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.75rem;
+      background: #f8fafc;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #475569;
+      transition: all .2s;
+      text-align: left;
+    }
+
+    .issue-type-btn:hover {
+      border-color: #3b82f6;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .issue-type-btn.active {
+      border-color: #3b82f6;
+      background: #eff6ff;
+      color: #1d4ed8;
+    }
+
+    .issue-type-btn.active.type--bug       { border-color: #ef4444; background: #fef2f2; color: #b91c1c; }
+    .issue-type-btn.active.type--feature   { border-color: #10b981; background: #f0fdf4; color: #047857; }
+    .issue-type-btn.active.type--question  { border-color: #f59e0b; background: #fffbeb; color: #b45309; }
+    .issue-type-btn.active.type--other     { border-color: #8b5cf6; background: #f5f3ff; color: #6d28d9; }
+
+    .issue-type-btn__icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+
+    .issue-type-btn__icon svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    .type--bug     .issue-type-btn__icon { background: #fef2f2; color: #ef4444; }
+    .type--feature .issue-type-btn__icon { background: #f0fdf4; color: #10b981; }
+    .type--question .issue-type-btn__icon { background: #fffbeb; color: #f59e0b; }
+    .type--other   .issue-type-btn__icon { background: #f5f3ff; color: #8b5cf6; }
+
+    .type--bug.active     .issue-type-btn__icon { background: #fee2e2; }
+    .type--feature.active .issue-type-btn__icon { background: #dcfce7; }
+    .type--question.active .issue-type-btn__icon { background: #fef9c3; }
+    .type--other.active   .issue-type-btn__icon { background: #ede9fe; }
+
+    .issue-form__divider {
+      border: none;
+      border-top: 1px solid #f1f5f9;
+      margin: 2rem 0;
+    }
+
+    .issue-form__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .issue-form__submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1e3a8a;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.8125rem 1.75rem;
+      cursor: pointer;
+      transition: background .2s, transform .15s, box-shadow .2s;
+    }
+
+    .issue-form__submit:hover {
+      background: #1e40af;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(30,58,138,.25);
+    }
+
+    .issue-form__submit:active {
+      transform: translateY(0);
+    }
+
+    .issue-form__note {
+      font-size: 0.8125rem;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    .issue-form__note a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+
+    .issue-form__note a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tips section */
+    .issue-tips {
+      margin-top: 2.5rem;
+    }
+
+    .issue-tips__title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 1rem;
+    }
+
+    .issue-tips__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .issue-tips__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .issue-tip {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.875rem;
+      padding: 1.25rem;
+    }
+
+    .issue-tip__icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.875rem;
+      flex-shrink: 0;
+    }
+
+    .issue-tip__icon svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+
+    .issue-tip:nth-child(1) .issue-tip__icon { background: #eff6ff; color: #3b82f6; }
+    .issue-tip:nth-child(2) .issue-tip__icon { background: #fef9c3; color: #ca8a04; }
+    .issue-tip:nth-child(3) .issue-tip__icon { background: #f0fdf4; color: #10b981; }
+
+    .issue-tip__title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 0.25rem;
+    }
+
+    .issue-tip__desc {
+      font-size: 0.8125rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+
+    /* Success state */
+    .issue-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .issue-success__icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      background: #f0fdf4;
+      color: #10b981;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+    }
+
+    .issue-success__icon svg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .issue-success__title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    .issue-success__desc {
+      color: #64748b;
+      margin-bottom: 1.5rem;
+    }
+
+    .issue-success__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #1e3a8a;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.75rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+
+    .issue-success__link:hover {
+      background: #1e40af;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Comptal2</a>
+    <div class="nav__links">
+      <a href="index.html" data-i18n="nav.home">Accueil</a>
+      <a href="download.html" data-i18n="nav.download">Télécharger</a>
+      <a href="qui-je-suis.html" data-i18n="nav.about">Qui je suis</a>
+      <a href="signaler.html" class="nav__link--active" data-i18n="nav.report">Signaler</a>
+      <select id="lang-switcher" class="lang-switcher" aria-label="Language">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+        <option value="de">DE</option>
+      </select>
+    </div>
+  </nav>
+
+  <main class="issue-page">
+
+    <section class="dl-hero">
+      <div class="dl-hero__bg" aria-hidden="true">
+        <div class="dl-hero__orb dl-hero__orb--1"></div>
+        <div class="dl-hero__orb dl-hero__orb--2"></div>
+        <div class="dl-hero__orb dl-hero__orb--3"></div>
+      </div>
+      <div class="dl-hero__content">
+        <span class="dl-hero__badge" data-i18n="report.badge">Retour &amp; Issues GitHub</span>
+        <h1 class="dl-hero__title" data-i18n="report.heroTitle">Signaler un problème</h1>
+        <p class="dl-hero__subtitle" data-i18n="report.heroSubtitle">Votre retour aide à améliorer Comptal2 pour tout le monde</p>
+      </div>
+    </section>
+
+    <div class="issue-content">
+
+      <div class="issue-intro reveal">
+        <p class="issue-intro__desc" data-i18n="report.intro">Remplissez le formulaire ci-dessous. Vous serez redirigé vers GitHub avec les informations pré-remplies — il ne restera plus qu'à soumettre.</p>
+      </div>
+
+      <div class="issue-form-card reveal">
+
+        <form id="issue-form" novalidate>
+
+          <!-- Type d'issue -->
+          <div class="issue-form__group">
+            <label class="issue-form__label" data-i18n="report.typeLabel">Type de retour <span>*</span></label>
+            <div class="issue-form__type-grid">
+              <button type="button" class="issue-type-btn type--bug" data-type="bug" data-label-fr="Bug" data-label-en="Bug" data-label-de="Fehler">
+                <span class="issue-type-btn__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </span>
+                <div>
+                  <div data-i18n="report.typeBug">Bug</div>
+                  <small style="font-weight:400;color:inherit;opacity:.75;" data-i18n="report.typeBugSub">Quelque chose ne fonctionne pas</small>
+                </div>
+              </button>
+              <button type="button" class="issue-type-btn type--feature" data-type="enhancement" data-label-fr="Suggestion" data-label-en="Feature request" data-label-de="Funktionswunsch">
+                <span class="issue-type-btn__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                </span>
+                <div>
+                  <div data-i18n="report.typeFeature">Suggestion</div>
+                  <small style="font-weight:400;color:inherit;opacity:.75;" data-i18n="report.typeFeatureSub">Proposition d'amélioration</small>
+                </div>
+              </button>
+              <button type="button" class="issue-type-btn type--question" data-type="question" data-label-fr="Question" data-label-en="Question" data-label-de="Frage">
+                <span class="issue-type-btn__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </span>
+                <div>
+                  <div data-i18n="report.typeQuestion">Question</div>
+                  <small style="font-weight:400;color:inherit;opacity:.75;" data-i18n="report.typeQuestionSub">Besoin d'aide ou de clarification</small>
+                </div>
+              </button>
+              <button type="button" class="issue-type-btn type--other" data-type="other" data-label-fr="Autre" data-label-en="Other" data-label-de="Sonstiges">
+                <span class="issue-type-btn__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </span>
+                <div>
+                  <div data-i18n="report.typeOther">Autre</div>
+                  <small style="font-weight:400;color:inherit;opacity:.75;" data-i18n="report.typeOtherSub">Tout autre sujet</small>
+                </div>
+              </button>
+            </div>
+            <input type="hidden" id="issue-type" value="">
+          </div>
+
+          <hr class="issue-form__divider">
+
+          <!-- Titre -->
+          <div class="issue-form__group">
+            <label class="issue-form__label" for="issue-title" data-i18n="report.titleLabel">Titre <span>*</span></label>
+            <span class="issue-form__sublabel" data-i18n="report.titleSub">Un résumé court et clair du problème ou de la suggestion</span>
+            <input type="text" id="issue-title" class="issue-form__input" placeholder="Ex : L'export CSV échoue avec les caractères spéciaux" maxlength="200" data-i18n-placeholder="report.titlePlaceholder">
+          </div>
+
+          <!-- Description -->
+          <div class="issue-form__group">
+            <label class="issue-form__label" for="issue-body" data-i18n="report.descLabel">Description <span>*</span></label>
+            <span class="issue-form__sublabel" data-i18n="report.descSub">Décrivez le problème ou la suggestion avec le plus de détails possible</span>
+            <textarea id="issue-body" class="issue-form__textarea" rows="6" placeholder="Décrivez ce qui se passe, les étapes pour reproduire, le comportement attendu…" data-i18n-placeholder="report.descPlaceholder"></textarea>
+          </div>
+
+          <!-- Version & OS -->
+          <div class="issue-form__row">
+            <div class="issue-form__group" style="margin-bottom:0">
+              <label class="issue-form__label" for="issue-version" data-i18n="report.versionLabel">Version de Comptal2</label>
+              <input type="text" id="issue-version" class="issue-form__input" placeholder="Ex : 1.1.0" data-i18n-placeholder="report.versionPlaceholder">
+            </div>
+            <div class="issue-form__group" style="margin-bottom:0">
+              <label class="issue-form__label" for="issue-os" data-i18n="report.osLabel">Système d'exploitation</label>
+              <select id="issue-os" class="issue-form__select">
+                <option value="" data-i18n="report.osPlaceholder">— Choisir —</option>
+                <option value="Windows">Windows</option>
+                <option value="macOS">macOS</option>
+                <option value="Linux">Linux</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <hr class="issue-form__divider">
+
+          <!-- Error msg -->
+          <p id="issue-error" style="display:none;color:#ef4444;font-size:.875rem;margin-bottom:1rem;"></p>
+
+          <div class="issue-form__actions">
+            <button type="submit" class="issue-form__submit">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span data-i18n="report.submitBtn">Ouvrir sur GitHub</span>
+            </button>
+            <p class="issue-form__note" data-i18n="report.submitNote">Un compte GitHub est requis pour soumettre l'issue. <a href="https://github.com/join" target="_blank" rel="noopener noreferrer">Créer un compte gratuit →</a></p>
+          </div>
+
+        </form>
+
+        <!-- Success state (shown after redirect) -->
+        <div class="issue-success" id="issue-success">
+          <div class="issue-success__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h2 class="issue-success__title" data-i18n="report.successTitle">Redirection en cours…</h2>
+          <p class="issue-success__desc" data-i18n="report.successDesc">GitHub s'est ouvert dans un nouvel onglet avec votre issue pré-remplie. Il ne reste plus qu'à cliquer "Submit new issue".</p>
+          <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" class="issue-success__link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span data-i18n="report.successBtn">Voir les issues GitHub</span>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Tips -->
+      <div class="issue-tips reveal">
+        <p class="issue-tips__title" data-i18n="report.tipsTitle">Conseils pour un bon rapport</p>
+        <div class="issue-tips__grid">
+          <div class="issue-tip">
+            <div class="issue-tip__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="issue-tip__title" data-i18n="report.tip1Title">Vérifiez les doublons</div>
+            <p class="issue-tip__desc" data-i18n="report.tip1Desc">Recherchez sur <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" style="color:#3b82f6">GitHub</a> si une issue similaire existe déjà.</p>
+          </div>
+          <div class="issue-tip">
+            <div class="issue-tip__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            </div>
+            <div class="issue-tip__title" data-i18n="report.tip2Title">Reproduire le bug</div>
+            <p class="issue-tip__desc" data-i18n="report.tip2Desc">Listez les étapes précises pour reproduire le problème de manière fiable.</p>
+          </div>
+          <div class="issue-tip">
+            <div class="issue-tip__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="issue-tip__title" data-i18n="report.tip3Title">Contexte système</div>
+            <p class="issue-tip__desc" data-i18n="report.tip3Desc">Précisez la version de Comptal2, l'OS et la version de votre système.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <a href="https://github.com/LeopaulV/Comptal2" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Code source</a>
+    <span class="footer__sep">·</span>
+    <a href="https://github.com/LeopaulV/Comptal2/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">Releases</a>
+    <span class="footer__sep">·</span>
+    <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.issues">Signaler un problème</a>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      /* ── Type selection ── */
+      const typeBtns = document.querySelectorAll('.issue-type-btn');
+      const typeInput = document.getElementById('issue-type');
+
+      typeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          typeBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          typeInput.value = btn.dataset.type;
+        });
+      });
+
+      /* ── Form submission ── */
+      const form = document.getElementById('issue-form');
+      const errorEl = document.getElementById('issue-error');
+      const successEl = document.getElementById('issue-success');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const type = typeInput.value;
+        const title = document.getElementById('issue-title').value.trim();
+        const body = document.getElementById('issue-body').value.trim();
+        const version = document.getElementById('issue-version').value.trim();
+        const os = document.getElementById('issue-os').value;
+
+        /* Validation */
+        const lang = (window.comptal2i18n ? window.comptal2i18n.getPreferredLang() : null) || document.documentElement.lang || 'fr';
+        const errors = {
+          fr: { type: 'Veuillez sélectionner un type de retour.', title: 'Veuillez saisir un titre.', body: 'Veuillez saisir une description.' },
+          en: { type: 'Please select a type.', title: 'Please enter a title.', body: 'Please enter a description.' },
+          de: { type: 'Bitte einen Typ auswählen.', title: 'Bitte einen Titel eingeben.', body: 'Bitte eine Beschreibung eingeben.' }
+        };
+        const err = errors[lang] || errors.fr;
+
+        if (!type)  { errorEl.textContent = err.type;  errorEl.style.display = 'block'; return; }
+        if (!title) { errorEl.textContent = err.title; errorEl.style.display = 'block'; return; }
+        if (!body)  { errorEl.textContent = err.body;  errorEl.style.display = 'block'; return; }
+        errorEl.style.display = 'none';
+
+        /* Build GitHub issue body */
+        const activeBtn = document.querySelector('.issue-type-btn.active');
+        const typeLabel = activeBtn ? activeBtn.querySelector('div > div:first-child').textContent.trim() : type;
+
+        let ghBody = '';
+        ghBody += `**Type :** ${typeLabel}\n\n`;
+        ghBody += `## Description\n\n${body}\n\n`;
+        if (version || os) {
+          ghBody += `## Environnement\n\n`;
+          if (version) ghBody += `- **Version Comptal2 :** ${version}\n`;
+          if (os)      ghBody += `- **Système d'exploitation :** ${os}\n`;
+        }
+        ghBody += `\n---\n*Issue créée via le formulaire du site Comptal2.*`;
+
+        /* Build URL */
+        const base = 'https://github.com/LeopaulV/Comptal2/issues/new';
+        const params = new URLSearchParams();
+        params.set('title', title);
+        params.set('body', ghBody);
+        if (type !== 'other') params.set('labels', type);
+
+        const url = `${base}?${params.toString()}`;
+
+        /* Open in new tab */
+        window.open(url, '_blank', 'noopener,noreferrer');
+
+        /* Show success state */
+        form.style.display = 'none';
+        successEl.style.display = 'block';
+      });
+    })();
+  </script>
+</body>
+</html>

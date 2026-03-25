@@ -17,6 +17,7 @@
       <a href="index.html" class="nav__link--active" data-i18n="nav.home">Accueil</a>
       <a href="download.html" data-i18n="nav.download">Télécharger</a>
       <a href="qui-je-suis.html" data-i18n="nav.about">Qui je suis</a>
+      <a href="signaler.html" data-i18n="nav.report">Signaler</a>
       <select id="lang-switcher" class="lang-switcher" aria-label="Language">
         <option value="fr">FR</option>
         <option value="en">EN</option>
@@ -52,32 +53,44 @@
 
       <div class="features__grid">
         <article class="feature-card reveal">
-          <span class="feature-card__icon">📥</span>
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
           <h3 class="feature-card__title" data-i18n="features.import.title">Import de données</h3>
           <p class="feature-card__desc" data-i18n="features.import.desc">Importez vos fichiers CSV ou Excel. Détection automatique des colonnes et mapping personnalisable (date, libellé, montant, compte, catégorie).</p>
         </article>
         <article class="feature-card reveal">
-          <span class="feature-card__icon">📊</span>
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
           <h3 class="feature-card__title" data-i18n="features.dashboard.title">Tableau de bord</h3>
           <p class="feature-card__desc" data-i18n="features.dashboard.desc">Statistiques en temps réel, soldes par compte, graphiques interactifs (camemberts, barres) pour une vue d'ensemble immédiate.</p>
         </article>
         <article class="feature-card reveal">
-          <span class="feature-card__icon">💰</span>
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
           <h3 class="feature-card__title" data-i18n="features.finance.title">Finance global</h3>
           <p class="feature-card__desc" data-i18n="features.finance.desc">Revenus vs dépenses, analyses mensuelles, tendances et graphiques détaillés pour une analyse complète de vos finances.</p>
         </article>
         <article class="feature-card reveal">
-          <span class="feature-card__icon">🏷️</span>
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          </div>
           <h3 class="feature-card__title" data-i18n="features.categorization.title">Catégorisation automatique</h3>
           <p class="feature-card__desc" data-i18n="features.categorization.desc">Règles configurables et apprentissage des patterns récurrents pour classer vos transactions automatiquement.</p>
         </article>
         <article class="feature-card reveal">
-          <span class="feature-card__icon">🏦</span>
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--navy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+          </div>
           <h3 class="feature-card__title" data-i18n="features.multiAccount.title">Multi-comptes</h3>
           <p class="feature-card__desc" data-i18n="features.multiAccount.desc">Gérez plusieurs comptes bancaires avec soldes individuels et vue consolidée globale.</p>
         </article>
         <article class="feature-card reveal">
-          <span class="feature-card__icon">📤</span>
+          <div class="feature-card__icon-wrap feature-card__icon-wrap--slate">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
           <h3 class="feature-card__title" data-i18n="features.export.title">Export de données</h3>
           <p class="feature-card__desc" data-i18n="features.export.desc">Exportez vos transactions filtrées au format CSV. Générez des rapports PDF personnalisés pour vos bilans.</p>
         </article>
@@ -373,23 +386,33 @@
           <p class="showcase__desc" data-i18n="entreprise.desc">Un espace dédié à la gestion complète de votre entreprise, de la facturation au suivi fiscal.</p>
           <ul class="showcase__list">
             <li class="showcase__item reveal-left">
-              <span class="showcase__item-icon">📄</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
               <div><strong data-i18n="entreprise.invoices.title">Devis et factures</strong><span data-i18n="entreprise.invoices.desc">Créez des devis, convertissez-les en factures, suivez les paiements et générez des PDF conformes.</span></div>
             </li>
             <li class="showcase__item reveal-left">
-              <span class="showcase__item-icon">👥</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--indigo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
               <div><strong data-i18n="entreprise.clients.title">Gestion clients</strong><span data-i18n="entreprise.clients.desc">Répertoire de clients (particuliers/entreprises), recherche SIRENE, historique des transactions.</span></div>
             </li>
             <li class="showcase__item reveal-left">
-              <span class="showcase__item-icon">📦</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
               <div><strong data-i18n="entreprise.stock.title">Stock et achats</strong><span data-i18n="entreprise.stock.desc">Inventaire, amortissements, registre d'achats, suivi de la valeur patrimoniale de l'entreprise.</span></div>
             </li>
             <li class="showcase__item reveal-left">
-              <span class="showcase__item-icon">📒</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              </div>
               <div><strong data-i18n="entreprise.registre.title">Registres fiscaux</strong><span data-i18n="entreprise.registre.desc">Livre des recettes, registre des achats, rapports TVA (CA3/CA12) et rapport d'activité annuel en PDF.</span></div>
             </li>
             <li class="showcase__item reveal-left">
-              <span class="showcase__item-icon">📈</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--violet">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
               <div><strong data-i18n="entreprise.stats.title">Tableaux de bord</strong><span data-i18n="entreprise.stats.desc">CA total, taux de recouvrement, répartition des bénéfices par poste, évolution de l'inventaire.</span></div>
             </li>
           </ul>
@@ -422,23 +445,33 @@
           <p class="showcase__desc" data-i18n="association.desc">Suivi des donateurs, reçus fiscaux CERFA et analyse des dons — tout ce qu'il faut pour votre comptabilité associative.</p>
           <ul class="showcase__list">
             <li class="showcase__item reveal-right">
-              <span class="showcase__item-icon">🤝</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--rose">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
               <div><strong data-i18n="association.donors.title">Gestion des donateurs</strong><span data-i18n="association.donors.desc">Particuliers et entreprises, dons en numéraire, en nature et mécénat de compétences. Liaison directe aux transactions bancaires.</span></div>
             </li>
             <li class="showcase__item reveal-right">
-              <span class="showcase__item-icon">🧾</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--teal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+              </div>
               <div><strong data-i18n="association.cerfa.title">Reçus fiscaux CERFA</strong><span data-i18n="association.cerfa.desc">Génération conforme aux articles 200 et 238 bis du CGI. Aperçu PDF, génération individuelle ou en lot.</span></div>
             </li>
             <li class="showcase__item reveal-right">
-              <span class="showcase__item-icon">📋</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--slate">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+              </div>
               <div><strong data-i18n="association.registre.title">Registre des reçus</strong><span data-i18n="association.registre.desc">Historique complet, filtres (actifs/annulés), traçabilité garantie avec conservation des reçus annulés.</span></div>
             </li>
             <li class="showcase__item reveal-right">
-              <span class="showcase__item-icon">💡</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
               <div><strong data-i18n="association.charges.title">Charges et projections</strong><span data-i18n="association.charges.desc">Projection des charges récurrentes, suivi par catégorie, export PDF pour vos bilans associatifs.</span></div>
             </li>
             <li class="showcase__item reveal-right">
-              <span class="showcase__item-icon">📊</span>
+              <div class="showcase__item-icon-wrap showcase__item-icon-wrap--teal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+              </div>
               <div><strong data-i18n="association.charts.title">Synthèse et graphiques</strong><span data-i18n="association.charts.desc">Total des dons, nombre de donateurs actifs, don moyen, répartition par catégorie et top donateurs.</span></div>
             </li>
           </ul>
@@ -466,32 +499,128 @@
     <section class="diagram" id="schema">
       <h2 class="section-title reveal" data-i18n="diagram.title">Schéma du logiciel</h2>
       <p class="section-intro reveal" data-i18n="diagram.intro">Vue d'ensemble du flux de données et des modules de Comptal2.</p>
-      <div class="diagram__container reveal">
-        <div class="diagram__flow">
-          <div class="diagram__node diagram__node--entry">
-            <span class="diagram__label" data-i18n="diagram.import">Import</span>
-            <span class="diagram__sublabel" data-i18n="diagram.importSub">CSV / Excel</span>
+
+      <div class="arch reveal">
+
+        <!-- Col 1 : Entrée -->
+        <div class="arch__group">
+          <p class="arch__group-label" data-i18n="diagram.colInput">Entrée</p>
+
+          <div class="arch__node arch__node--blue">
+            <div class="arch__icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </div>
+            <div class="arch__node-text">
+              <span class="arch__node-title" data-i18n="diagram.import">Import</span>
+              <span class="arch__node-sub" data-i18n="diagram.importSub">CSV / Excel</span>
+            </div>
           </div>
-          <div class="diagram__arrow">→</div>
-          <div class="diagram__node">
-            <span class="diagram__label" data-i18n="diagram.transactions">Transactions</span>
-            <span class="diagram__sublabel" data-i18n="diagram.transactionsSub">Base de données</span>
-          </div>
-          <div class="diagram__arrow">→</div>
-          <div class="diagram__branch">
-            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.dashboard">Tableau de bord</span></div>
-            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.finance">Finance global</span></div>
-            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.edition">Édition</span></div>
-            <div class="diagram__node diagram__node--module diagram__node--entreprise"><span class="diagram__label" data-i18n="diagram.entreprise">Entreprise</span></div>
-            <div class="diagram__node diagram__node--module diagram__node--association"><span class="diagram__label" data-i18n="diagram.association">Association</span></div>
-            <div class="diagram__node diagram__node--module"><span class="diagram__label" data-i18n="diagram.projet">Projet</span></div>
+
+          <div class="arch__node arch__node--slate">
+            <div class="arch__icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+            </div>
+            <div class="arch__node-text">
+              <span class="arch__node-title" data-i18n="diagram.params">Paramètres</span>
+              <span class="arch__node-sub" data-i18n="diagram.paramsSub">Comptes · Catégories · Profils</span>
+            </div>
           </div>
         </div>
+
+        <!-- Flèche 1 -->
+        <div class="arch__arrow" aria-hidden="true">
+          <svg width="28" height="12" viewBox="0 0 28 12" fill="none"><path d="M0 6h24M19 1l6 5-6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Col 2 : Données centrales -->
+        <div class="arch__group arch__group--center">
+          <p class="arch__group-label" data-i18n="diagram.colData">Données</p>
+          <div class="arch__node arch__node--indigo arch__node--core">
+            <div class="arch__icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="arch__node-text">
+              <span class="arch__node-title" data-i18n="diagram.transactions">Transactions</span>
+              <span class="arch__node-sub">data/ · profiles/</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flèche 2 -->
+        <div class="arch__arrow" aria-hidden="true">
+          <svg width="28" height="12" viewBox="0 0 28 12" fill="none"><path d="M0 6h24M19 1l6 5-6 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <!-- Col 3 : Modules -->
+        <div class="arch__group arch__group--modules">
+          <p class="arch__group-label" data-i18n="diagram.legendModule">Vues &amp; Modules</p>
+          <div class="arch__modules">
+
+            <div class="arch__module arch__module--indigo">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.dashboard">Tableau de bord</span>
+              <span class="arch__module-sub">Dashboard/</span>
+            </div>
+
+            <div class="arch__module arch__module--emerald">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.finance">Finance Global</span>
+              <span class="arch__module-sub">FinanceGlobal/</span>
+            </div>
+
+            <div class="arch__module arch__module--amber">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.edition">Édition</span>
+              <span class="arch__module-sub">Edition/</span>
+            </div>
+
+            <div class="arch__module arch__module--blue">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.entreprise">Entreprise</span>
+              <span class="arch__module-sub">Invoicing/</span>
+            </div>
+
+            <div class="arch__module arch__module--teal">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.association">Association</span>
+              <span class="arch__module-sub">Association/</span>
+            </div>
+
+            <div class="arch__module arch__module--violet">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.projet">Projet</span>
+              <span class="arch__module-sub">ProjectManagement/</span>
+            </div>
+
+            <div class="arch__module arch__module--slate arch__module--full">
+              <div class="arch__module-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              </div>
+              <span class="arch__module-title" data-i18n="diagram.export">Export</span>
+              <span class="arch__module-sub">CSV · PDF</span>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-      <div class="diagram__legend reveal">
-        <div class="diagram__legend-item"><span class="diagram__legend-dot diagram__legend-dot--entry"></span><span data-i18n="diagram.legendEntry">Entrée des données</span></div>
-        <div class="diagram__legend-item"><span class="diagram__legend-dot diagram__legend-dot--core"></span><span data-i18n="diagram.legendCore">Données centralisées</span></div>
-        <div class="diagram__legend-item"><span class="diagram__legend-dot diagram__legend-dot--module"></span><span data-i18n="diagram.legendModule">Vues et modules</span></div>
+
+      <div class="arch__legend reveal">
+        <div class="arch__legend-item"><span class="arch__legend-dot arch__legend-dot--blue"></span><span data-i18n="diagram.legendEntry">Entrée des données</span></div>
+        <div class="arch__legend-item"><span class="arch__legend-dot arch__legend-dot--indigo"></span><span data-i18n="diagram.legendCore">Données centralisées</span></div>
+        <div class="arch__legend-item"><span class="arch__legend-dot arch__legend-dot--multi"></span><span data-i18n="diagram.legendModule">Vues et modules</span></div>
       </div>
     </section>
 
