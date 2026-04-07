@@ -144,7 +144,9 @@ body {
 
 .nav__links {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 1.25rem;
 }
 
 .nav__links a {
@@ -1569,6 +1571,11 @@ body {
   color: var(--invoicing-gray-500);
   background: var(--invoicing-gray-50);
   border-top: 1px solid var(--invoicing-gray-200);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem 0;
 }
 
 .footer a {
@@ -2159,4 +2166,76 @@ body {
   border-radius: 4px;
   color: var(--invoicing-primary);
   font-weight: 600;
+}
+
+/* ========== SEO pages (comparatif) ========== */
+.seo-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.seo-page__intro {
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+  color: var(--invoicing-gray-600);
+  line-height: 1.55;
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--invoicing-gray-200);
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.compare-table th,
+.compare-table td {
+  border-bottom: 1px solid var(--invoicing-gray-200);
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-table th {
+  background: var(--invoicing-gray-50);
+  font-weight: 600;
+  color: var(--invoicing-gray-800);
+}
+
+.compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table tr:nth-child(even) td {
+  background: rgba(30, 58, 138, 0.03);
+}
+
+.compare-table td:first-child {
+  font-weight: 600;
+  color: var(--invoicing-gray-700);
+  white-space: nowrap;
+}
+
+.seo-page__cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  background: var(--invoicing-primary);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.seo-page__cta:hover {
+  background: var(--invoicing-primary-light);
 }

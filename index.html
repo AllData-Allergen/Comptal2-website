@@ -4,6 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Comptal2 — Logiciel de comptabilité moderne</title>
+  <link rel="canonical" href="https://comptal2.org/">
+  <meta property="og:url" content="https://comptal2.org/">
+  <meta property="og:site_name" content="Comptal2">
+  <meta property="og:title" content="Comptal2 — Logiciel de comptabilité moderne">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="description" content="Comptal2 — logiciel de comptabilité open source et gratuit pour Windows, macOS et Linux. Tableau de bord, import CSV, modules entreprise et associations.">
+  <meta property="og:description" content="Comptal2 — logiciel de comptabilité open source et gratuit pour Windows, macOS et Linux. Tableau de bord, import CSV, entreprise, associations.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Comptal2 — Logiciel de comptabilité moderne">
+  <meta name="twitter:description" content="Comptal2 — logiciel de comptabilité open source et gratuit pour Windows, macOS et Linux.">
+  <link rel="alternate" hreflang="fr" href="https://comptal2.org/">
+  <link rel="alternate" hreflang="en" href="https://comptal2.org/">
+  <link rel="alternate" hreflang="de" href="https://comptal2.org/">
+  <link rel="alternate" hreflang="x-default" href="https://comptal2.org/">
+  <link rel="preload" href="styles.css" as="style">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Comptal2",
+    "description": "Logiciel de comptabilité moderne pour Windows, macOS et Linux. Open source et gratuit.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "softwareVersion": "1.1.0",
+    "url": "https://comptal2.org/",
+    "downloadUrl": "https://comptal2.org/download.html",
+    "license": "https://github.com/LeopaulV/Comptal2/blob/main/LICENSE",
+    "codeRepository": "https://github.com/LeopaulV/Comptal2",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR"
+    }
+  }
+  </script>
+  <script src="site-config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,6 +54,7 @@
       <a href="index.html" class="nav__link--active" data-i18n="nav.home">Accueil</a>
       <a href="download.html" data-i18n="nav.download">Télécharger</a>
       <a href="qui-je-suis.html" data-i18n="nav.about">Qui je suis</a>
+      <a href="comparatif.html" data-i18n="nav.compare">Comparatif</a>
       <a href="signaler.html" data-i18n="nav.report">Signaler</a>
       <select id="lang-switcher" class="lang-switcher" aria-label="Language">
         <option value="fr">FR</option>
@@ -640,6 +678,8 @@
   </main>
 
   <footer class="footer">
+    <a href="comparatif.html" data-i18n="nav.compare">Comparatif</a>
+    <span class="footer__sep">·</span>
     <a href="https://github.com/LeopaulV/Comptal2" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Code source</a>
     <span class="footer__sep">·</span>
     <a href="https://github.com/LeopaulV/Comptal2/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">Releases</a>
@@ -647,7 +687,7 @@
     <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.issues">Signaler un problème</a>
   </footer>
 
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+Soumission du sitemap (à faire une fois le site déployé)
+============================================================
+
+1. Google Search Console (https://search.google.com/search-console)
+   - Propriété : domaine comptal2.org ou préfixe d'URL https://comptal2.org/
+   - Menu « Sitemaps » → ajouter : https://comptal2.org/sitemap.xml
+
+2. Bing Webmaster Tools (https://www.bing.com/webmasters)
+   - Ajouter le site ou importer depuis la Search Console
+   - Soumettre : https://comptal2.org/sitemap.xml

@@ -1,0 +1,12 @@
+Référence — crawlers et Cloudflare (Comptal2)
+============================================
+
+Vérification rapide (200 attendu pour Googlebot) :
+  curl.exe -sI -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" "https://comptal2.org/"
+
+Si un 403 réapparaît :
+1. Cloudflare → Security → Bots : assouplir Bot Fight / Super Bot Fight ou exclure les UA Googlebot et bingbot.
+2. Security → WAF → Events : identifier la règle déclenchée ; créer une exception « Skip » pour les user-agents des moteurs de recherche.
+3. Rules → Redirect / Firewall : aucune règle ne doit renvoyer 403 sur / ou sur *.html pour les bots légitimes.
+
+robots.txt et sitemap.xml doivent être servis en HTTP 200 à la racine du domaine.

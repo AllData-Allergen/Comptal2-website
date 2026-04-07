@@ -1,0 +1,15 @@
+Core Web Vitals — vérification manuelle
+=========================================
+
+1. Ouvrir https://pagespeed.web.dev/
+2. Tester en mobile et desktop :
+   - https://comptal2.org/
+   - https://comptal2.org/download.html
+
+3. Actions déjà en place côté site :
+   - Polices Google avec display=swap
+   - scripts i18n.js / script.js en defer (sauf formulaire signaler : inline après defer)
+   - preload de styles.css sur les pages SEO
+   - en-têtes cache via _headers (Cloudflare Pages)
+
+4. Itérer selon les recommandations PSI (images, cache, JS).

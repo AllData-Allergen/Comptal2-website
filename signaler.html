@@ -4,6 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signaler un problème — Comptal2</title>
+  <link rel="canonical" href="https://comptal2.org/signaler.html">
+  <meta property="og:url" content="https://comptal2.org/signaler.html">
+  <meta property="og:site_name" content="Comptal2">
+  <meta property="og:title" content="Signaler un problème — Comptal2">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="description" content="Signaler un bug ou une suggestion pour Comptal2 — redirection vers GitHub Issues avec formulaire prérempli.">
+  <meta property="og:description" content="Signaler un bug ou une suggestion pour Comptal2 — via GitHub Issues.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Signaler un problème — Comptal2">
+  <meta name="twitter:description" content="Formulaire de retour et redirection vers GitHub Issues pour Comptal2.">
+  <link rel="alternate" hreflang="fr" href="https://comptal2.org/signaler.html">
+  <link rel="alternate" hreflang="en" href="https://comptal2.org/signaler.html">
+  <link rel="alternate" hreflang="de" href="https://comptal2.org/signaler.html">
+  <link rel="alternate" hreflang="x-default" href="https://comptal2.org/signaler.html">
+  <link rel="preload" href="styles.css" as="style">
+  <script src="site-config.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -367,6 +384,7 @@
       <a href="index.html" data-i18n="nav.home">Accueil</a>
       <a href="download.html" data-i18n="nav.download">Télécharger</a>
       <a href="qui-je-suis.html" data-i18n="nav.about">Qui je suis</a>
+      <a href="comparatif.html" data-i18n="nav.compare">Comparatif</a>
       <a href="signaler.html" class="nav__link--active" data-i18n="nav.report">Signaler</a>
       <select id="lang-switcher" class="lang-switcher" aria-label="Language">
         <option value="fr">FR</option>
@@ -544,6 +562,8 @@
   </main>
 
   <footer class="footer">
+    <a href="comparatif.html" data-i18n="nav.compare">Comparatif</a>
+    <span class="footer__sep">·</span>
     <a href="https://github.com/LeopaulV/Comptal2" target="_blank" rel="noopener noreferrer" data-i18n="footer.source">Code source</a>
     <span class="footer__sep">·</span>
     <a href="https://github.com/LeopaulV/Comptal2/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.releases">Releases</a>
@@ -551,8 +571,8 @@
     <a href="https://github.com/LeopaulV/Comptal2/issues" target="_blank" rel="noopener noreferrer" data-i18n="footer.issues">Signaler un problème</a>
   </footer>
 
-  <script src="i18n.js"></script>
-  <script src="script.js"></script>
+  <script src="i18n.js" defer></script>
+  <script src="script.js" defer></script>
   <script>
     (function () {
       /* ── Type selection ── */
