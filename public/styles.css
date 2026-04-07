@@ -1514,6 +1514,21 @@ body {
   word-break: break-all;
 }
 
+/* Badge .deb / .rpm dans le titre de la carte */
+.dl-card__badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: var(--invoicing-gray-100);
+  color: var(--invoicing-gray-600);
+  vertical-align: middle;
+  margin-left: 4px;
+  font-family: ui-monospace, "SF Mono", monospace;
+}
+
 /* Download button */
 .dl-card__btn {
   display: inline-flex;

@@ -7,26 +7,26 @@
     windows: {
       label: "Windows",
       file: "Comptal2-1.1.0-win-x64.exe",
-      url: "https://github.com/LeopaulV/Comptal2_release/releases/download/Comptability/Comptal2-1.1.0-win-x64.exe",
+      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-win-x64.exe",
       desc: "Windows 10/11 (64-bit)",
     },
     "macos-intel": {
       label: "macOS Intel",
       file: "Comptal2-1.1.0-mac-x64.dmg",
-      url: "https://github.com/LeopaulV/Comptal2_release/releases/download/Comptability/Comptal2-1.1.0-mac-x64.dmg",
+      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-mac-x64.dmg",
       desc: "macOS 10.15+ (x64)",
     },
     "macos-arm": {
       label: "macOS Apple Silicon",
       file: "Comptal2-1.1.0-mac-arm64.dmg",
-      url: "https://github.com/LeopaulV/Comptal2_release/releases/download/Comptability/Comptal2-1.1.0-mac-arm64.dmg",
+      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-mac-arm64.dmg",
       desc: "M1 / M2 / M3 (arm64)",
     },
     linux: {
       label: "Linux",
-      file: "Comptal2-1.1.0-linux-x86_64.AppImage",
-      url: "https://github.com/LeopaulV/Comptal2_release/releases/download/Comptability/Comptal2-1.1.0-linux-x86_64.AppImage",
-      desc: "AppImage portable (x86_64)",
+      file: "Comptal2-1.1.0-linux-amd64.deb",
+      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-linux-amd64.deb",
+      desc: "Debian / Ubuntu / Mint (amd64)",
     },
   };
 
