@@ -1,10 +1,6 @@
 {
   "name": "comptal2",
   "compatibility_date": "2025-09-27",
-  "observability": {
-    "enabled": true
-  },
-  // Site statique uniquement dans public/ (évite d’inclure .git au déploiement)
   "assets": {
     "directory": "./public"
   }
