@@ -2254,3 +2254,41 @@ body {
 .seo-page__cta:hover {
   background: var(--invoicing-primary-light);
 }
+
+/* ========== Real screenshots ========== */
+.shot-frame {
+  background: #fff;
+  border: 1px solid var(--invoicing-gray-200);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  width: 100%;
+  max-width: 560px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.shot-frame:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.shot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.shot-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 560px;
+}
+.shot-gallery .shot-frame {
+  max-width: 100%;
+}
+.detail__visual--shots,
+.showcase__visual--shots {
+  align-items: stretch;
+}
+.showcase__visual--shots .shot-frame {
+  max-width: 480px;
+}

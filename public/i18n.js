@@ -13,9 +13,9 @@
 
       /* Hero */
       "hero.badge": "Open Source & Gratuit",
-      "hero.title": "Comptal2",
-      "hero.subtitle": "Logiciel de comptabilité moderne — Windows, macOS, Linux",
-      "hero.cta": "Télécharger Comptal2",
+      "hero.title": "Comptal2.1",
+      "hero.subtitle": "Logiciel de comptabilité moderne — Windows & Linux",
+      "hero.cta": "Télécharger Comptal2.1",
       "hero.discover": "Découvrir",
 
       /* Features */
@@ -180,11 +180,11 @@
       "footer.issues": "Signaler un problème",
 
       /* Download page */
-      "dl.title": "Téléchargez Comptal2",
+      "dl.title": "Téléchargez Comptal2.1",
       "dl.detecting": "Détection de votre appareil en cours…",
       "dl.recommended": "Recommandé pour votre appareil :",
       "dl.choose": "Choisissez votre plateforme ci-dessous",
-      "dl.version": "Version 1.1.0 (LTS)",
+      "dl.version": "Version 2.1.2 — Comptal2.1",
       "dl.selectSystem": "Sélectionnez un système",
       "dl.downloadFor": "Télécharger pour",
       "dl.yourPlatform": "votre plateforme",
@@ -253,7 +253,7 @@
       "report.descSub": "Décrivez le problème ou la suggestion avec le plus de détails possible",
       "report.descPlaceholder": "Décrivez ce qui se passe, les étapes pour reproduire, le comportement attendu…",
       "report.versionLabel": "Version de Comptal2",
-      "report.versionPlaceholder": "Ex : 1.1.0",
+      "report.versionPlaceholder": "Ex : 2.1.2",
       "report.osLabel": "Système d'exploitation",
       "report.osPlaceholder": "— Choisir —",
       "report.submitBtn": "Ouvrir sur GitHub",
@@ -309,9 +309,9 @@
       "nav.compare": "Compare",
 
       "hero.badge": "Open Source & Free",
-      "hero.title": "Comptal2",
-      "hero.subtitle": "Modern accounting software — Windows, macOS, Linux",
-      "hero.cta": "Download Comptal2",
+      "hero.title": "Comptal2.1",
+      "hero.subtitle": "Modern accounting software — Windows & Linux",
+      "hero.cta": "Download Comptal2.1",
       "hero.discover": "Discover",
 
       "features.title": "How It Works",
@@ -458,17 +458,17 @@
 
       "cta.title": "Ready to manage your finances?",
       "cta.desc": "Free, open source and available on all platforms.",
-      "cta.btn": "Download Comptal2",
+      "cta.btn": "Download Comptal2.1",
 
       "footer.source": "Source code",
       "footer.releases": "Releases",
       "footer.issues": "Report an issue",
 
-      "dl.title": "Download Comptal2",
+      "dl.title": "Download Comptal2.1",
       "dl.detecting": "Detecting your device…",
       "dl.recommended": "Recommended for your device:",
       "dl.choose": "Choose your platform below",
-      "dl.version": "Version 1.1.0 (LTS)",
+      "dl.version": "Version 2.1.2 — Comptal2.1",
       "dl.selectSystem": "Select a system",
       "dl.downloadFor": "Download for",
       "dl.yourPlatform": "your platform",
@@ -535,7 +535,7 @@
       "report.descSub": "Describe the issue or suggestion with as much detail as possible",
       "report.descPlaceholder": "Describe what happens, steps to reproduce, expected behaviour…",
       "report.versionLabel": "Comptal2 version",
-      "report.versionPlaceholder": "e.g. 1.1.0",
+      "report.versionPlaceholder": "e.g. 2.1.2",
       "report.osLabel": "Operating system",
       "report.osPlaceholder": "— Choose —",
       "report.submitBtn": "Open on GitHub",
@@ -579,7 +579,7 @@
       "compare.row4w": "SMB, independents",
       "compare.row4o": "SMB / full ERP",
       "compare.row4g": "Personal, small business",
-      "compare.cta": "Download Comptal2",
+      "compare.cta": "Download Comptal2.1",
     },
 
     de: {
@@ -590,9 +590,9 @@
       "nav.compare": "Vergleich",
 
       "hero.badge": "Open Source & Kostenlos",
-      "hero.title": "Comptal2",
-      "hero.subtitle": "Moderne Buchhaltungssoftware — Windows, macOS, Linux",
-      "hero.cta": "Comptal2 herunterladen",
+      "hero.title": "Comptal2.1",
+      "hero.subtitle": "Moderne Buchhaltungssoftware — Windows & Linux",
+      "hero.cta": "Comptal2.1 herunterladen",
       "hero.discover": "Entdecken",
 
       "features.title": "So funktioniert es",
@@ -739,17 +739,17 @@
 
       "cta.title": "Bereit, Ihre Finanzen zu verwalten?",
       "cta.desc": "Kostenlos, Open Source und für alle Plattformen verfügbar.",
-      "cta.btn": "Comptal2 herunterladen",
+      "cta.btn": "Comptal2.1 herunterladen",
 
       "footer.source": "Quellcode",
       "footer.releases": "Releases",
       "footer.issues": "Problem melden",
 
-      "dl.title": "Comptal2 herunterladen",
+      "dl.title": "Comptal2.1 herunterladen",
       "dl.detecting": "Gerät wird erkannt…",
       "dl.recommended": "Empfohlen für Ihr Gerät:",
       "dl.choose": "Wählen Sie Ihre Plattform unten",
-      "dl.version": "Version 1.1.0 (LTS)",
+      "dl.version": "Version 2.1.2 — Comptal2.1",
       "dl.selectSystem": "System wählen",
       "dl.downloadFor": "Herunterladen für",
       "dl.yourPlatform": "Ihre Plattform",
@@ -816,7 +816,7 @@
       "report.descSub": "Beschreiben Sie das Problem oder den Vorschlag so detailliert wie möglich",
       "report.descPlaceholder": "Beschreiben Sie was passiert, Schritte zur Reproduktion, erwartetes Verhalten…",
       "report.versionLabel": "Comptal2-Version",
-      "report.versionPlaceholder": "z.B. 1.1.0",
+      "report.versionPlaceholder": "z.B. 2.1.2",
       "report.osLabel": "Betriebssystem",
       "report.osPlaceholder": "— Auswählen —",
       "report.submitBtn": "Auf GitHub öffnen",
@@ -860,7 +860,7 @@
       "compare.row4w": "KMU, Selbstständige",
       "compare.row4o": "KMU / ERP",
       "compare.row4g": "Privat, KMU",
-      "compare.cta": "Comptal2 herunterladen",
+      "compare.cta": "Comptal2.1 herunterladen",
     },
   };
 
