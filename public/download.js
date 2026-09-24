@@ -12,7 +12,7 @@
       label: "Windows",
       file: "Comptal2.1_2.1.2_x64-setup.exe",
       url: RELEASE_BASE + "/Comptal2.1_2.1.2_x64-setup.exe",
-      desc: "Windows 10/11 (64-bit) — Comptal2.1",
+      desc: "Windows 10/11 (64-bit) — Comptal2 v2.1.2",
     },
     "macos-intel": {
       label: "macOS Intel",
@@ -30,13 +30,13 @@
       label: "Linux",
       file: "Comptal2.1_2.1.2_amd64.deb",
       url: RELEASE_BASE + "/Comptal2.1_2.1.2_amd64.deb",
-      desc: "Debian / Ubuntu / Mint (amd64) — Comptal2.1",
+      desc: "Debian / Ubuntu / Mint (amd64) — Comptal2 v2.1.2",
     },
     "linux-rpm": {
       label: "Linux RPM",
       file: "Comptal2.1-2.1.2-1.x86_64.rpm",
       url: RELEASE_BASE + "/Comptal2.1-2.1.2-1.x86_64.rpm",
-      desc: "Fedora / RHEL / openSUSE (x86_64) — Comptal2.1",
+      desc: "Fedora / RHEL / openSUSE (x86_64) — Comptal2 v2.1.2",
     },
   };
 
