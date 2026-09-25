@@ -1396,6 +1396,16 @@ body {
 }
 
 /* ---------- Platform cards section ---------- */
+.dl-platforms__note {
+  max-width: 720px;
+  margin: 0 auto 1.25rem;
+  padding: 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--invoicing-gray-600);
+  text-align: center;
+}
+
 .dl-platforms {
   max-width: 960px;
   margin: 0 auto;

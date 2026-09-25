@@ -200,6 +200,7 @@
       "dl.altText": "Utilisez un autre système ? Choisissez ci-dessous :",
       "dl.allVersions": "Voir toutes les versions sur GitHub",
       "dl.downloadBtn": "Télécharger",
+      "dl.linuxRefresh": "Les paquets Linux (.deb / .rpm) et l’installateur Windows 2.1.2 incluent les dernières corrections (pubkey updater, messages de vérification).",
 
       /* Qui je suis */
       "about.badge": "Créateur de Comptal2",
@@ -492,6 +493,7 @@
       "dl.altText": "Using another system? Choose below:",
       "dl.allVersions": "View all versions on GitHub",
       "dl.downloadBtn": "Download",
+      "dl.linuxRefresh": "Linux packages (.deb / .rpm) and the Windows 2.1.2 installer include the latest fixes (updater public key, clearer check messages).",
 
       "about.badge": "Creator of Comptal2",
       "about.heroTitle": "About me",
@@ -781,6 +783,7 @@
       "dl.altText": "Anderes System? Wählen Sie unten:",
       "dl.allVersions": "Alle Versionen auf GitHub anzeigen",
       "dl.downloadBtn": "Herunterladen",
+      "dl.linuxRefresh": "Linux-Pakete (.deb / .rpm) und das Windows-Installationsprogramm 2.1.2 enthalten die neuesten Korrekturen (Updater-Public-Key, klarere Prüfmeldungen).",
 
       "about.badge": "Entwickler von Comptal2",
       "about.heroTitle": "Über mich",
