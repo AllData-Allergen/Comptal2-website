@@ -1396,6 +1396,16 @@ body {
 }
 
 /* ---------- Platform cards section ---------- */
+.dl-platforms__note {
+  max-width: 720px;
+  margin: 0 auto 1.25rem;
+  padding: 0 1rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--invoicing-gray-600);
+  text-align: center;
+}
+
 .dl-platforms {
   max-width: 960px;
   margin: 0 auto;
@@ -1550,6 +1560,68 @@ body {
   background: var(--invoicing-primary-light);
   box-shadow: 0 4px 16px rgba(30, 58, 138, 0.25);
   transform: translateY(-2px);
+}
+
+/* Legacy downloads (1.1.0) */
+.dl-legacy {
+  max-width: 720px;
+  margin: 2.5rem auto 0;
+  padding: 1.5rem 1.75rem;
+  border-radius: 12px;
+  border: 1px dashed var(--invoicing-gray-300);
+  background: var(--invoicing-gray-50);
+}
+
+.dl-legacy__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--invoicing-gray-800);
+}
+
+.dl-legacy__intro {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--invoicing-gray-600);
+}
+
+.dl-legacy__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.dl-legacy__links li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.dl-legacy__links a {
+  color: var(--invoicing-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.dl-legacy__links a:hover {
+  text-decoration: underline;
+}
+
+.dl-legacy__badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--invoicing-gray-200);
+  color: var(--invoicing-gray-700);
 }
 
 /* Footer link */
@@ -2253,4 +2325,42 @@ body {
 
 .seo-page__cta:hover {
   background: var(--invoicing-primary-light);
+}
+
+/* ========== Real screenshots ========== */
+.shot-frame {
+  background: #fff;
+  border: 1px solid var(--invoicing-gray-200);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  width: 100%;
+  max-width: 560px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.shot-frame:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+}
+.shot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.shot-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 560px;
+}
+.shot-gallery .shot-frame {
+  max-width: 100%;
+}
+.detail__visual--shots,
+.showcase__visual--shots {
+  align-items: stretch;
+}
+.showcase__visual--shots .shot-frame {
+  max-width: 480px;
 }

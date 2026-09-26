@@ -1,32 +1,42 @@
 /**
- * Détection de l'appareil et mise à jour de la section recommandée (style Node.js)
+ * Détection de l'appareil et mise à jour de la section recommandée
  * Compatible avec le système i18n
+ * Comptal2.1 v2.1.3 — Windows + Linux ; macOS legacy 1.1.0
  */
 (function () {
+  var RELEASE_BASE = "https://github.com/AllData-Allergen/Comptal2/releases/download/v2.1.3";
+  var LEGACY_MAC_BASE = "https://github.com/LeopaulV/Comptal2/releases/download/Accounting";
+
   var PLATFORMS = {
     windows: {
       label: "Windows",
-      file: "Comptal2-1.1.0-win-x64.exe",
-      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-win-x64.exe",
-      desc: "Windows 10/11 (64-bit)",
+      file: "Comptal2.1_2.1.3_x64-setup.exe",
+      url: RELEASE_BASE + "/Comptal2.1_2.1.3_x64-setup.exe",
+      desc: "Windows 10/11 (64-bit) — Comptal2 v2.1.3",
     },
     "macos-intel": {
       label: "macOS Intel",
       file: "Comptal2-1.1.0-mac-x64.dmg",
-      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-mac-x64.dmg",
-      desc: "macOS 10.15+ (x64)",
+      url: LEGACY_MAC_BASE + "/Comptal2-1.1.0-mac-x64.dmg",
+      desc: "macOS 10.15+ (x64) — Comptal2 1.1.0 legacy",
     },
     "macos-arm": {
       label: "macOS Apple Silicon",
       file: "Comptal2-1.1.0-mac-arm64.dmg",
-      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-mac-arm64.dmg",
-      desc: "M1 / M2 / M3 (arm64)",
+      url: LEGACY_MAC_BASE + "/Comptal2-1.1.0-mac-arm64.dmg",
+      desc: "M1 / M2 / M3 (arm64) — Comptal2 1.1.0 legacy",
     },
     linux: {
       label: "Linux",
-      file: "Comptal2-1.1.0-linux-amd64.deb",
-      url: "https://github.com/LeopaulV/Comptal2/releases/download/Accounting/Comptal2-1.1.0-linux-amd64.deb",
-      desc: "Debian / Ubuntu / Mint (amd64)",
+      file: "Comptal2.1_2.1.3_amd64.deb",
+      url: RELEASE_BASE + "/Comptal2.1_2.1.3_amd64.deb",
+      desc: "Debian / Ubuntu / Mint (amd64) — Comptal2 v2.1.3",
+    },
+    "linux-rpm": {
+      label: "Linux RPM",
+      file: "Comptal2.1-2.1.3-1.x86_64.rpm",
+      url: RELEASE_BASE + "/Comptal2.1-2.1.3-1.x86_64.rpm",
+      desc: "Fedora / RHEL / openSUSE (x86_64) — Comptal2 v2.1.3",
     },
   };
 
@@ -72,7 +82,7 @@
     } else {
       detectedText.textContent = t("dl.choose");
       recommendedPlatform.textContent = t("dl.selectSystem");
-      recommendedBtn.href = "https://github.com/LeopaulV/Comptal2/releases";
+      recommendedBtn.href = "https://github.com/AllData-Allergen/Comptal2/releases";
       recommendedBtn.target = "_blank";
       recommendedBtn.removeAttribute("download");
       recommendedLabel.textContent = t("dl.viewReleases");
