@@ -1649,6 +1649,89 @@ body {
   border-color: var(--invoicing-primary-lighter);
 }
 
+/* ========== API Agents IA & MCP ========== */
+.dl-mcp {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  background: var(--invoicing-gray-50);
+  border: 1px solid var(--invoicing-gray-200);
+  border-radius: 12px;
+}
+
+.dl-mcp__card {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.dl-mcp__icon-wrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: var(--invoicing-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dl-mcp__icon-wrap svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.dl-mcp__body {
+  flex: 1;
+}
+
+.dl-mcp__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--invoicing-gray-900);
+}
+
+.dl-mcp__desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 1rem;
+  color: var(--invoicing-gray-700);
+}
+
+.dl-mcp__list {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+  color: var(--invoicing-gray-700);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.dl-mcp__list li {
+  margin-bottom: 0.4rem;
+}
+
+.dl-mcp__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--invoicing-primary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--invoicing-primary-lightest);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.dl-mcp__btn:hover {
+  background: var(--invoicing-primary-lightest);
+  border-color: var(--invoicing-primary-lighter);
+}
+
 /* ========== Footer ========== */
 .footer {
   margin-top: auto;
